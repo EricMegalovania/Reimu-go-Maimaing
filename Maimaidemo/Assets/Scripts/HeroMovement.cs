@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class HeroMovement : MonoBehaviour
 {
-    public bool IfJumping=false;
+    public bool isOnGround=false;
     public float SpeedX=6.0f;
+    public float AssumeFriction=0.15f;
     public float JumpY=15.0f;
+    public LayerMask groundLayer;
     public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -17,33 +19,43 @@ public class HeroMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        /*
         float xVelocity = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(xVelocity * SpeedX,rb.velocity.y);
+        */
+        if(Input.GetKey(KeyCode.D))
+        {
+            rb.velocity = new Vector2(SpeedX,rb.velocity.y);
+        }
+        if(Input.GetKey(KeyCode.A))
+        {
+            rb.velocity = new Vector2(-SpeedX,rb.velocity.y);
+        }
+        if(!Input.GetKey(KeyCode.A)&&!Input.GetKey(KeyCode.D))
+        {
+            Vector2 p=rb.velocity;
+            if(p.x>AssumeFriction) p.x-=AssumeFriction;
+            else if(p.x<-AssumeFriction) p.x+=AssumeFriction;
+            else p.x=0;
+            rb.velocity = p;
+        }
     }
     void Update()
-        {
-            if(!IfJumping&&Input.GetKeyDown(KeyCode.Space))
-            {
-                Vector3 p=rb.velocity;
-                p.y=JumpY;
-                rb.velocity=p;
-                IfJumping=true;
-            }
-        }
-    void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector3 p=rb.velocity;
-        if(IfJumping&&p.y==0) 
+        if(rb.IsTouchingLayers(groundLayer))
         {
-            IfJumping=false;
+            Debug.Log("1111");
+            isOnGround = true;
         }
-    }
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        Vector3 p=rb.velocity;
-        if(IfJumping&&p.y==0) 
+        else
         {
-            IfJumping=false;
+            isOnGround = false;
+        }
+        if(isOnGround&&Input.GetKeyDown(KeyCode.Space))
+        {
+            Vector3 p=rb.velocity;
+            p.y=JumpY;
+            rb.velocity=p;
         }
     }
 }

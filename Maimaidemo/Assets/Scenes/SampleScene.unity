@@ -490,9 +490,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8607b135465e8e44daa62e52bccafbaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IfJumping: 0
+  isOnGround: 0
   SpeedX: 6
+  AssumeFriction: 0.15
   JumpY: 15
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
   rb: {fileID: 0}
 --- !u!70 &817777592
 CapsuleCollider2D:
@@ -631,7 +635,7 @@ GameObject:
   - component: {fileID: 1103391392}
   - component: {fileID: 1103391391}
   - component: {fileID: 1103391393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4908,7 +4912,7 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
