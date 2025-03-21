@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/demo grass.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 33291d01bf52cbb45a59a100f2517606
+  - enabled: 1
+    path: Assets/Scenes/demo castle.unity
+    guid: 91046d4a01900694cb410059ceb6614a
+  - enabled: 0
+    path: Assets/Scenes/test lockpick.unity
+    guid: 1f679c0057a61804ea0532fde2f73842
+  - enabled: 1
+    path: Assets/Scenes/demo cloud.unity
+    guid: bef6f5a466a034344861ce523452499b
+  - enabled: 1
+    path: Assets/Scenes/Lockpick_Tutorial.unity
+    guid: 7ab4939781baafa4c8445c56c7660a58
+  - enabled: 1
+    path: Assets/Scenes/shift/castle to sky.unity
+    guid: 58c79e5f2fbcb3243944a532d670e028
+  - enabled: 1
+    path: Assets/Scenes/shift/pre castle.unity
+    guid: 9a0189f92d220a043ae5f99fd27072a6
+  - enabled: 1
+    path: Assets/Scenes/shift/boss cloud.unity
+    guid: 9c4a52c6a2c65474b91b36b7395889be
+  - enabled: 1
+    path: Assets/Scenes/TheEnd.unity
+    guid: ce19865df164ae7429bf7d88546385b5
+  - enabled: 1
+    path: Assets/Scenes/Locks/Lockpick_1.unity
+    guid: 9fda4655f7dc58348866077b383dc6c5
+  - enabled: 1
+    path: Assets/Scenes/Locks/Lockpick_2.unity
+    guid: 3cedb06b7022e634485156d12f88df21
+  - enabled: 1
+    path: Assets/Scenes/Locks/Lockpick_3.unity
+    guid: cb26bb9938c029e42917f487e2e22de4
+  - enabled: 1
+    path: Assets/Scenes/Locks/Lockpick_4.unity
+    guid: 01e4b662e1757a14796b0cc84927d616
+  - enabled: 1
+    path: Assets/Scenes/Locks/Lockpick_5.unity
+    guid: 69affd5dcbf51b34e894026b0f3357ac
+  - enabled: 1
+    path: Assets/Scenes/Locks/Lockpick_6.unity
+    guid: dc8143bc5b2cea14e8e7ba90b0bd22ae
+  m_configObjects: {}
